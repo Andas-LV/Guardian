@@ -1,0 +1,103 @@
+.newsDetailModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    width:100vw;
+    height:100vh;
+    background-color:#1e1f22;
+    color: white;
+    padding: 20px;
+}
+.newsDetailBlock{
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.webTitle{
+    font-size: 26px;
+    font-weight: 600;
+}
+.sectionDetailName{
+
+}
+.Date{
+
+}
+.originLink{
+    color: aqua;
+}
+
+/*CloseButton*/
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 4em;
+    height: 4em;
+    border: none;
+    background: rgba(255, 0, 59, 0.11);
+    border-radius: 5px;
+    transition: background 0.5s;
+}
+
+.X {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 1.5px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 1.5px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.close {
+    position: absolute;
+    display: flex;
+    padding: 0.8rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    top: -70%;
+    left: 50%;
+    width: 3em;
+    height: 1.7em;
+    font-size: 12px;
+    background-color: rgb(19, 22, 24);
+    color: rgb(187, 229, 236);
+    border: none;
+    border-radius: 3px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.closeButton:hover {
+    background-color: rgb(211, 21, 21);
+}
+
+.closeButton:active {
+    background-color: rgb(130, 0, 0);
+}
+
+.closeButton:hover > .close {
+    animation: close 0.2s forwards 0.25s;
+}
+
+@keyframes close {
+    100% {
+        opacity: 1;
+    }
+}
