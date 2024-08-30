@@ -1,30 +1,28 @@
-import React, { useEffect } from 'react';
-import styles from './components.module.css';
-import { fetchNews } from '@/app/api/route';
+import React, { useEffect } from "react";
+import styles from "./components.module.css";
+import { nextPage, prevPage } from "../store/pageSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
 
-interface BackProps {
-    currentPage: number;
-    onPageChange: (newPage: number) => void;
-}
+type BackProps = {
+  currentPage: number;
+  onPageChange: (newPage: number) => void;
+};
 
-const Back: React.FC<BackProps> = ({ currentPage, onPageChange }) => {
-    useEffect(() => {
-        fetchNews(currentPage)
-            .then()
-            .catch((error) => {
-                console.error(error);
-            });
-    }, [currentPage]);
+const Back: React.FC<BackProps> = () => {
+  const dispatch = useDispatch();
+  const currentPage = useSelector((state: RootState) => state.page.currentPage);
 
-    const handlePage = () => {
-        onPageChange(currentPage - (currentPage-1));
-    };
+  const handlePrevPage = () => {
+    dispatch(prevPage());
+    console.log("currentPage", currentPage);
+  };
 
-    return (
-        <button onClick={handlePage} className={styles.backBtn}>
-            Back
-        </button>
-    );
+  return (
+    <button onClick={handlePrevPage} className={styles.backBtn}>
+      Back
+    </button>
+  );
 };
 
 export default Back;

@@ -3,11 +3,11 @@ import styles from './detail.module.css';
 
 interface NewsDetailProps {
     newsItem: {
+        id: number;
         sectionName: string;
-        webPublicationDate: number;
+        webPublicationDate: string;
         webTitle: string;
         webUrl : string;
-        id: number;
     } | null;
     onClose: () => void;
 }

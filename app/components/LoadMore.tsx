@@ -1,30 +1,28 @@
-import React, { useEffect } from 'react';
-import styles from './components.module.css';
-import { fetchNews } from '@/app/api/route';
+import React, { useEffect } from "react";
+import styles from "./components.module.css";
+import { nextPage } from "../store/pageSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 interface LoadMoreProps {
-    currentPage: number;
-    onPageChange: (newPage: number) => void;
+  currentPage: number;
+  onPageChange: (newPage: number) => void;
 }
 
-const LoadMore: React.FC<LoadMoreProps> = ({ currentPage, onPageChange }) => {
-    useEffect(() => {
-        fetchNews(currentPage)
-            .then()
-            .catch((error) => {
-                console.error(error);
-            });
-    }, [currentPage]);
+const LoadMore: React.FC<LoadMoreProps> = () => {
+  const dispatch = useDispatch();
+  const currentPage = useSelector((state: RootState) => state.page.currentPage);
 
-    const handlePage = () => {
-        onPageChange(currentPage + 1);
-    };
+  const handleNextPage = () => {
+    dispatch(nextPage());
+    console.log("currentPage", currentPage);
+  };
 
-    return (
-        <button onClick={handlePage} className={styles.loadMoreBtn}>
-            Load More
-        </button>
-    );
+  return (
+    <button onClick={handleNextPage} className={styles.loadMoreBtn}>
+      Load More
+    </button>
+  );
 };
 
 export default LoadMore;
