@@ -19,19 +19,14 @@ interface NewsItem {
 }
 
 const NewsPage: React.FC = () => {
-  const [page, setPage] = useState(1);
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const dispatch = useDispatch<AppDispatch>();
   const currentPage = useSelector((state: RootState) => state.page.currentPage);
-  const { news, status, error } = useSelector((state: RootState) => state.news);
+  const { news, status, error, totalPage } = useSelector((state: RootState) => state.news);
 
   useEffect(() => {
     dispatch(fetchNews(currentPage));
   }, [currentPage, dispatch]);
-
-  const handlePageChange = (newPage: number) => {
-    setPage(newPage);
-  };
 
   if (status === "loading")
     return (
@@ -59,8 +54,9 @@ const NewsPage: React.FC = () => {
       </div>
 
       <div className={styles.btnGroup}>
-        <LoadMore currentPage={page} onPageChange={handlePageChange} />
-        <Back currentPage={page} onPageChange={handlePageChange} />
+        <Back />
+        {currentPage}/{totalPage}
+        <LoadMore />
       </div>
 
       <NewsDetail

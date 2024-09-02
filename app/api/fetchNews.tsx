@@ -11,7 +11,7 @@ export const fetchNews = createAsyncThunk(
           'api-key': process.env.NEXT_API_KEY,
         },
       });
-      return response.data.response.results;
+      return response.data.response;
     } catch (error) {
       return rejectWithValue('Ошибка при загрузке новостей');
     }

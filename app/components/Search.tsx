@@ -16,7 +16,7 @@ const Search:React.FC<SearchComponent> = ({ news }) => {
     };
 
     return (
-        <div>
+        <div className={styles.searchWrapper}>
             <input
                 type="text"
                 value={query}

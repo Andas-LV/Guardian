@@ -3,12 +3,14 @@ import { fetchNews } from '../api/fetchNews';
 
 interface NewsState {
   news: any[];
+  totalPage: number;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
 
 const initialState: NewsState = {
   news: [],
+  totalPage: 0,
   status: 'idle',
   error: null,
 };
@@ -25,7 +27,8 @@ const newsSlice = createSlice({
       })
       .addCase(fetchNews.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.news = action.payload;
+        state.news = action.payload.results;
+        state.totalPage = action.payload.pages;	
       })
       .addCase(fetchNews.rejected, (state, action) => {
         state.status = 'failed';

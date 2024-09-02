@@ -3,7 +3,8 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 200px;
+    width: 100%;
+    /* padding: 0 10px; */
     border: 1px solid white;
     border-radius: 5px;
     color: #d4ded4;
@@ -13,9 +14,10 @@
     overflow: hidden;
     white-space: pre-wrap;
     text-overflow: ellipsis;
+    transition: .3s ease-in-out;
 }
 .block:hover{
-    background-color: #2e363a;
+    background-color: #272b2e;
 }
 .sectionName{
     color: #b88e68;
@@ -23,16 +25,22 @@
 }
 
 /*Search*/
+.searchWrapper{
+    border-bottom: 1.5px solid grey;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
 .searchedContainer{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
 }
+
 .searchedBlock{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 200px;
+    width: 100%;
     margin: 10px 0;
     border: 1px solid white;
     border-radius: 5px;
@@ -41,7 +49,7 @@
     overflow: hidden;
     white-space: pre-wrap;
     text-overflow: ellipsis;
-    background:linear-gradient(to right, #171b1e, #2c6752);
+    background: rgb(29, 38, 52);
     color: #ffffff;
 }
 .searchBtn{
@@ -50,11 +58,37 @@
     border: 1px solid white;
     border-radius: 5px;
     padding: 5px;
-    width: 20%;
+    width: 100%;
+    max-width: 100px;
+    transition: .3s ease-in-out;
 }
 .searchInput, .searchResult{
     color: white;
 }
+
+@media (max-width: 1200px) {
+    .searchedContainer {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .searchedContainer {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .searchedContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .searchedContainer {
+      grid-template-columns: 1fr;
+    }
+  }
 
 /*LoadMore, back*/
 .loadMoreBtn, .backBtn{
@@ -63,7 +97,9 @@
     border: 1px solid white;
     border-radius: 5px;
     padding: 5px;
-    width: 30%;
+    width: 100%;
+    max-width: 300px;
+    transition: .3s ease-in-out;
 }
 .loadMoreBtn:hover, .backBtn:hover, .searchBtn:hover{
     background-color: white;
