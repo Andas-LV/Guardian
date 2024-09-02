@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './detail.module.css';
+import { formatDate } from '@/app/helpers/formatDate'
 
 interface NewsDetailProps {
     newsItem: {
@@ -21,7 +22,7 @@ const NewsDetail: React.FC<NewsDetailProps> = ({ newsItem, onClose }) => {
         <div className={styles.newsDetailModal}>
             <div className={styles.newsDetailBlock}>
                 <h2 className={styles.webTitle}>{newsItem.webTitle}</h2>
-                <div className={styles.Date}>Date: {newsItem.webPublicationDate}</div>
+                <div className={styles.Date}>Date: {formatDate(newsItem.webPublicationDate)}</div>
                 <p className={styles.sectionDetailName}>Theme: {newsItem.sectionName}</p>
                 <a href={newsItem.webUrl} target="_blank" className={styles.originLink}>
                     Read on Guardian

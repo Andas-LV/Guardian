@@ -12,7 +12,7 @@ const LoadMore = () => {
 
   return (
     <button onClick={handleNextPage} className={styles.loadMoreBtn}>
-      Load More
+      More
     </button>
   );
 };

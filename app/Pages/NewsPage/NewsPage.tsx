@@ -10,7 +10,7 @@ import styles from "./news.module.css";
 import { fetchNews } from "../../api/fetchNews";
 import NewsDetail from "../NewsDetail/NewsDetail";
 
-interface NewsItem {
+export interface NewsItem {
   id: number;
   sectionName: string;
   webPublicationDate: string;

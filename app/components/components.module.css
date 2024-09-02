@@ -1,107 +1,115 @@
 /*NewsCard*/
-.block{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    /* padding: 0 10px; */
-    border: 1px solid white;
-    border-radius: 5px;
-    color: #d4ded4;
-    padding: 20px;
-    cursor: pointer;
-    background-color: #1e1f22;
-    overflow: hidden;
-    white-space: pre-wrap;
-    text-overflow: ellipsis;
-    transition: .3s ease-in-out;
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  /* padding: 0 10px; */
+  border: 1px solid white;
+  border-radius: 5px;
+  color: #d4ded4;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #1e1f22;
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  transition: 0.3s ease-in-out;
 }
-.block:hover{
-    background-color: #272b2e;
+.block:hover {
+  background-color: #272b2e;
 }
-.sectionName{
-    color: #b88e68;
-    margin: 5px 0 10px;
+.sectionName {
+  color: #b88e68;
+  margin: 5px 0 10px;
 }
 
 /*Search*/
-.searchWrapper{
-    border-bottom: 1.5px solid grey;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
+.searchWrapper {
+  border-bottom: 1.5px solid grey;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
 }
-.searchedContainer{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
+.searchedContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
 }
 
-.searchedBlock{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    margin: 10px 0;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 20px;
-    cursor: pointer;
-    overflow: hidden;
-    white-space: pre-wrap;
-    text-overflow: ellipsis;
-    background: rgb(29, 38, 52);
-    color: #ffffff;
+.searchedBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  background: rgb(29, 38, 52);
+  transition: .2s ease-in-out;
+  color: #ffffff;
 }
-.searchBtn{
-    cursor: pointer;
-    color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100%;
-    max-width: 100px;
-    transition: .3s ease-in-out;
+.searchedBlock:hover {
+  background: rgb(37, 49, 70);
 }
-.searchInput, .searchResult{
-    color: white;
+.searchBtn {
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  max-width: 100px;
+  transition: 0.3s ease-in-out;
+}
+.searchInput,
+.searchResult {
+  color: white;
 }
 
 @media (max-width: 1200px) {
-    .searchedContainer {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  .searchedContainer {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  @media (max-width: 992px) {
-    .searchedContainer {
-      grid-template-columns: repeat(3, 1fr);
-    }
+}
+
+@media (max-width: 992px) {
+  .searchedContainer {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  @media (max-width: 768px) {
-    .searchedContainer {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media (max-width: 768px) {
+  .searchedContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (max-width: 576px) {
-    .searchedContainer {
-      grid-template-columns: 1fr;
-    }
+}
+
+@media (max-width: 576px) {
+  .searchedContainer {
+    grid-template-columns: 1fr;
   }
+}
 
 /*LoadMore, back*/
-.loadMoreBtn, .backBtn{
-    cursor: pointer;
-    color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100%;
-    max-width: 300px;
-    transition: .3s ease-in-out;
+.loadMoreBtn,
+.backBtn {
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+  transition: 0.3s ease-in-out;
 }
-.loadMoreBtn:hover, .backBtn:hover, .searchBtn:hover{
-    background-color: white;
-    color: black;
+.loadMoreBtn:hover,
+.backBtn:hover,
+.searchBtn:hover {
+  background-color: white;
+  color: black;
 }
