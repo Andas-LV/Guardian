@@ -1,4 +1,3 @@
-// src/store/index.ts
 import { configureStore } from '@reduxjs/toolkit';
 import newsReducer from './newSlice';
 import pageReducer from './pageSlice';
